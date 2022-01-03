@@ -70,6 +70,20 @@ The SQL commands that deals with the manipulation of data present in the databas
 -Delete:Delete the data in the table
 
 
+5)JOINS:
+A sql join statement is used to combine data or rows from two or more tables based on common field between them.
+
+Types:
+>Inner Join:
+    -It selects all rows from both the tables as long as the condition satisfies(Union).
+
+>Left Join:
+    -It returns all the rows of the left table and matching rows from the right table.
+>Right Join:
+    -It returns all the rows of the right table and the matching rows from the left table
+>Full Join:
+    -Returns a result by combining both left and right join tables
+
 
 
 

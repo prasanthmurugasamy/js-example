@@ -8,3 +8,8 @@ b.id=bs.branchId and s.id = bs.studentId;
 
 
 
+//
+SELECT `bs`.*, `b`.`name`, `s`.`name`
+FROM `branchstudent` AS `bs` 
+	LEFT JOIN `branch` AS `b` ON `bs`.`branchId` = `b`.`id` 
+	LEFT JOIN `student` AS `s` ON `bs`.`studentId` = `s`.`id`;
