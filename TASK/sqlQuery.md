@@ -13,7 +13,7 @@ insert into `student`(`id`,`name`)values(3,'Rajesh');
 
 >>CREATING TABLE `branch` 
 
-CREATE TABLE `branch`(id INT ,name VARCHAR(20),CONSTRAINT PRIMARY KEY(id));
+CREATE TABLE`branch`(id INT ,name VARCHAR(20),CONSTRAINT PRIMARY KEY(id));
 
 >>INSERTING VALUES IN TABLE `branch`
 
