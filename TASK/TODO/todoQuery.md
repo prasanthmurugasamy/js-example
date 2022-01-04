@@ -28,9 +28,9 @@
 
     INSERT INTO status(id,status_name) VALUES (1,'in-progress');
     
-    INSERT INTO status(id,status_name) VALUES (2,'completed');
+    INSERT INTO status(id,status_name) VALUES (2,'not-started');
     
-    INSERT INTO status(id,status_name) VALUES (3,'not started');
+    INSERT INTO status(id,status_name) VALUES (3,'completed');
 
 >>CREATING TABLE todo-->primarykey(id),ForeignKey(category_id,user_id)
 
@@ -66,3 +66,10 @@
     todo 
     JOIN
     user_details ON user_details.id = todo.user_id GROUP BY user_details.user_name;
+
+
+>>SELECTING TASK BASED ON COMPLETION
+    SELECT user_details.user_name,COUNT(user_details.user_name) FROM
+    todo 
+    JOIN
+    user_details ON user_details.id = todo.user_id WHERE todo.status_id <= 2 GROUP BY user_details.user_name ;
