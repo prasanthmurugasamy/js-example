@@ -1,37 +1,41 @@
+>>CREATING TABLE 'student' -->PrimaryKey(id)
 
->>CREATING TABLE `student` 
+    CREATE TABLE student(id INT ,name VARCHAR(20),PRIMARY KEY(id));
 
-CREATE TABLE `student`(id INT ,name VARCHAR(20),CONSTRAINT PRIMARY KEY(id));
+>>INSERTING VALES IN student
 
->>INSERTING VALUES IN TABLE `student`
+    insert into student(id,name)values(1,'Jay');
 
-insert into `student`(`id`,`name`)values(1,'Jay');
+    insert into student(id,name)values(2,'Sanjay');
 
-insert into `student`(`id`,`name`)values(2,'Sanjay');
+    insert into student(id,name)values(3,'Rajesh');
 
-insert into `student`(`id`,`name`)values(3,'Rajesh');
+>>CREATING TABLE 'branch' -->PrimaryKey(id)
 
->>CREATING TABLE `branch` 
+    CREATE TABLE branch(id INT ,name VARCHAR(20),PRIMARY KEY(id));
 
-CREATE TABLE`branch`(id INT ,name VARCHAR(20),CONSTRAINT PRIMARY KEY(id));
+>>INSERTING VALES IN branch
 
->>INSERTING VALUES IN TABLE `branch`
+    INSERT INTO branch(id, name) VALUES (1,'CSE');
 
-INSERT INTO `branch`(`id`, `name`) VALUES (1,'CSE');
+    INSERT INTO branch(id, name) VALUES (2,'IT');
 
-INSERT INTO `branch`(`id`, `name`) VALUES (2,'IT');
+>>CREATING TABLE 'branch_student' -->PrimaryKey(id),FOREIGN KEYS(branchId,studentId)
 
->>CREATING TABLE `branchstudent` 
+    CREATE TABLE branch_Student(id INT PRIMARY KEY,branch_Id INT,student_Id INT,FOREIGN KEY(branch_Id) REFERENCES branch(id),FOREIGN KEY(student_Id) REFERENCES student(id));
 
-CREATE TABLE `branchStudent`(id INT PRIMARY KEY,branchId INT,studentId INT,CONSTRAINT FOREIGN KEY(branchId) REFERENCES branch(id),FOREIGN KEY(studentId) REFERENCES student(id));
+>>INSERTING VALES IN branch_student
 
->>INSERTING VALUES IN TABLE `branchstudent`
+    INSERT INTO branch_Student(id, branch_Id, student_Id) VALUES (1,1,1);
 
-INSERT INTO `branchstudent`(`id`, `branchId`, `studentId`) VALUES (1,1,1);
+    INSERT INTO branch_Student(id, branch_Id, student_Id) VALUES (2,2,2);
 
-INSERT INTO `branchstudent`(`id`, `branchId`, `studentId`) VALUES (2,2,2);
+    INSERT INTO branch_Student(id, branch_Id, student_Id) VALUES (3,2,1);
 
-INSERT INTO `branchstudent`(`id`, `branchId`, `studentId`) VALUES (3,2,1);
+    INSERT INTO branch_Student(id, branch_Id, student_Id) VALUES (4,1,3);
 
-INSERT INTO `branchstudent`(`id`, `branchId`, `studentId`) VALUES (4,1,3);
+
+
+
+
 
