@@ -34,7 +34,7 @@
 
 >>CREATING TABLE todo-->primarykey(id),ForeignKey(category_id,user_id)
 
-    CREATE TABLE todo(id INT,user_id INT,task VARCHAR(100),category_id INT,status_id INT,due_date TEXT,PRIMARY KEY(id),FOREIGN KEY(status_id) REFERENCES status(id),FOREIGN KEY(user_id) REFERENCES user_details(id),FOREIGN KEY(category_id) REFERENCES category(id));
+    CREATE TABLE todo(id INT,user_id INT,task VARCHAR(100),category_id INT,status_id INT,created_date date,due_date date,PRIMARY KEY(id),FOREIGN KEY(status_id) REFERENCES status(id),FOREIGN KEY(user_id) REFERENCES user_details(id),FOREIGN KEY(category_id) REFERENCES category(id));
 
 
 >>INSERTING INTO todo
@@ -62,6 +62,7 @@
     
 
 >>SELECTING NUMBER OF TASK
+    CREATE VIEW taskCount AS
     SELECT user_details.user_name,COUNT(user_details.user_name) FROM
     todo 
     JOIN
@@ -69,7 +70,12 @@
 
 
 >>SELECTING TASK BASED ON COMPLETION
+    CREATE VIEW taskCount AS
     SELECT user_details.user_name,COUNT(user_details.user_name) FROM
     todo 
     JOIN
     user_details ON user_details.id = todo.user_id WHERE todo.status_id <= 2 GROUP BY user_details.user_name ;
+
+
+
+DATE-FORMAT:2022-01-04
