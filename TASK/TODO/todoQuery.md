@@ -39,15 +39,15 @@
 
 >>INSERTING INTO todo
 
-    INSERT INTO todo(id,user_id,task,category_id,status_id,due_date) VALUES(1,1,'Need to achieve 800 orders',1,1,CURRENT_DATE);
+    INSERT INTO todo(id,user_id,task,category_id,status_id,create_date date,due_date) VALUES(1,1,'Need to achieve 800 orders',1,1,'2022-01-04',CURRENT_DATE);
     
-    INSERT INTO todo(id,user_id,task,category_id,status_id,due_date) VALUES(2,2,'Train 5 Interns',1,1,CURRENT_DATE);
+    INSERT INTO todo(id,user_id,task,category_id,status_id,create_date date,due_date) VALUES(2,2,'Train 5 Interns',1,1,'2022-01-04',CURRENT_DATE);
     
-    INSERT INTO todo(id,user_id,task,category_id,status_id,due_date) VALUES(3,3,'Get Trained in Devops',2,3,CURRENT_DATE);
+    INSERT INTO todo(id,user_id,task,category_id,status_id,create_date date,due_date) VALUES(3,3,'Get Trained in Devops',2,3,'2022-01-04',CURRENT_DATE);
     
-    INSERT INTO todo(id,user_id,task,category_id,status_id,due_date) VALUES(4,3,'Get Trained in Hasura',2,1,CURRENT_DATE);
+    INSERT INTO todo(id,user_id,task,category_id,status_id,create_date date,due_date) VALUES(4,3,'Get Trained in Hasura',2,1,'2022-01-04',CURRENT_DATE);
     
-    INSERT INTO todo(id,user_id,task,category_id,status_id,due_date) VALUES(5,3,'Get Trained in Hardware',2,1,CURRENT_DATE);
+    INSERT INTO todo(id,user_id,task,category_id,status_id,create_date date,due_date) VALUES(5,3,'Get Trained in Hardware',2,1,'2022-01-04',CURRENT_DATE);
 
 >>SELECTING FULL DETAILS
 
@@ -78,4 +78,15 @@
 
 
 
-DATE-FORMAT:2022-01-04
+
+
+
+SELECT COUNT(todo.id),user_details.user_name,status.status_name FROM
+todo 
+JOIN
+user_details ON user_details.id = todo.user_id 
+JOIN status ON todo.status_id = status.id
+GROUP BY user_details.user_name,status.status_name ;
+
+
+DATE-FORMAT:'2022-01-04'
