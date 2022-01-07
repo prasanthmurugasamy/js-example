@@ -71,7 +71,7 @@ var data = require('E:/Office/Dev/Learn/expressjs/data.json')
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 app.listen(3000,function(){
-  console.log("Server Started");
+  console.log("Server Started"); 
 })
 
 
@@ -89,14 +89,14 @@ app.get('/branchStudent',(req,res) => res.json(data))
 
 
 //3.BRANCHSTUDENT JSON
- app.post('/student',(req,res) =>res.json((mergeStudent(req.body)))); 
+ app.post('/student',(req,res) =>res.json({ResponseBody : (mergeStudent(req.body))})); 
   
 
 
 
 function mergeStudent(x)
 {
-  let Input = x
+   let Input = x
   let branchStudentMap = []
   Input.branchStudent.forEach(branchStd => {
     let temp = {}
@@ -105,12 +105,11 @@ function mergeStudent(x)
     temp.id = branchStd.id;
     temp.branchId = branchStd.branchId;
     temp.studentId = branchStd.studentId;
-if(branchName && studentName)
-    {
+if(branchName && studentName){
   temp.branchName = branchName;
   temp.studentName = studentName;
   branchStudentMap.push(temp);
-    } }); 
+    }}); 
     return branchStudentMap;
 }
  
