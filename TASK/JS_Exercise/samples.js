@@ -62,8 +62,8 @@ console.log(company.category)
  
 console.log(agesSquare) */
 
-/* 
-Input = {
+ 
+input = {
   branchStudent: [
       { id: 1, branchId: 1, studentId: 1 },
       { id: 2, branchId: 2, studentId: 2 },
@@ -82,8 +82,10 @@ Input = {
 }
 
 
-function mergeStudent()
+function mergeStudent(input)
 {
+  Input = this.input
+  console.log(Input)
   let branchStudentMap = []
   Input.branchStudent.forEach(branchStd => {
     let temp = {}
@@ -105,7 +107,9 @@ if(branchName && studentName)
   return branchStudentMap;
 }
 
-console.log(mergeStudent()); */
+let x = mergeStudent(input)
+
+console.log(x)
 
 
 
@@ -119,3 +123,17 @@ let newarr =  ages.filter(function(age)
 })
 
 console.log(newarr) */
+
+
+
+/*       const j = {
+        name : 'jay'
+      }
+
+      const name1 = j.name
+
+      const f = {
+        OUTPUT : 'HELLO '+name1
+      }
+
+      console.log(f) */
