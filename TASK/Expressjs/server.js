@@ -76,20 +76,24 @@ app.listen(3000,function(){
 
 
 //1:DYNAMIC NAME - GET
- app.get("/get",(req,res)=>res.send(("HELLO " + req.query.name).toUpperCase()))  
+ //app.get("/get",(req,res)=>res.send(("HELLO " + req.query.name).toUpperCase()))  
 
 /* app.get("/:user",(req,res)=>res.send("WELCOME ! "+req.params.user+" !")) */
 
 //2.DYNAMIC NAME - POST
- app.post('/post',(req,res)=>res.json({Output : 'HELLO '+ req.body.name}))
+ //app.post('/post',(req,res)=>res.json({Output : 'HELLO '+ req.body.name}))
 
 
 //GET BRANCHSTUDENT JSON FILE
-app.get('/branchStudent',(req,res) => res.json(data)) 
+//app.get('/branchStudent',(req,res) => res.json(data)) 
 
 
 //3.BRANCHSTUDENT JSON
- app.post('/student',(req,res) =>res.json({ResponseBody : (mergeStudent(req.body))})); 
+ app.post('/student',(req,res) =>
+ //res.json({ResponseBody : (mergeStudent(req.body))})
+ res.json({"name":"prasanth"})
+ //console.log(mergeStudent(req.body))
+ ); 
   
 
 

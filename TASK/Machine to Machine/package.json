@@ -1,0 +1,17 @@
+{
+  "name": "machine-to-machine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Machine1.js",
+  "scripts": {
+    "devStart": "nodemon Machine1.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
